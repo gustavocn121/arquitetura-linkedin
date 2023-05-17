@@ -14,7 +14,9 @@
 ## Início do projeto
 ### Monolito
 * Leo
-  O LinkedIn começou como um único aplicativo monolito chamado "Leo". Ele hospedava web servlets para cada uma das várias páginas, continha a lógica de negócios e se conectava aos diversos bancos de dados do LinkedIn.
+  O LinkedIn começou como um único aplicativo monolito chamado "Leo". Ele hospedava web servlets para cada uma das várias páginas, continha a lógica de negócios e se conectava aos diversos bancos de dados do LinkedIn. <br/>
+![](images/Leo.png)
+
   
 * Member Graph
 * Replica read DBs
