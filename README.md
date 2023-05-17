@@ -24,7 +24,8 @@ A solução desenvolvida foi gerar replicas do banco de dados para apenas leitur
 
 
 ### Service Oriented Architecture (SOA)
-O site continuou a crescer e chegou a um ponto onde manter o monolito se tornou inviável. O aplicativo de produção seguia caindo frequentemente e investigar o problema, realizar manutenções, desenvolver novos códigos e recuperar o servidor era sempre uma operação muito complexa.
+O site continuou a crescer e chegou a um ponto onde manter o monolito se tornou inviável. O aplicativo de produção seguia caindo frequentemente e investigar o problema, realizar manutenções, desenvolver novos códigos e recuperar o servidor era sempre uma operação muito complexa.<br/>
+Com isso as seguintes soluções foram adotadas:
 
 * O que é SOA
   A Service-Oriented Architecture (SOA) é um estilo arquitetural baseado na criação e uso de componentes independentes e interoperáveis chamados serviços para desenvolver um software. Nesse modelo, os componentes interagem entre si para realizar as funcionalidades mais complexas do sistema.<br/> Essa abordagem permite a reutilização de serviços, facilita a integração entre sistemas e promove a modularidade e a escalabilidade.
@@ -48,3 +49,4 @@ O site continuou a crescer e chegou a um ponto onde manter o monolito se tornou 
 * https://about.linkedin.com/pt-br
 * https://aws.amazon.com/pt/what-is/service-oriented-architecture/#:~:text=you%20implement%20microservices%3F-,What%20is%20service%2Doriented%20architecture%3F,other%20across%20platforms%20and%20languages.
 * Slides da disciplina de Arquitetura de Software
+* https://engineering.linkedin.com/data-ingestion/gobblin-big-data-ease
