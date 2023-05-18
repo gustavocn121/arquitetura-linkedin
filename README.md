@@ -49,8 +49,14 @@ No fim de 2011 o LinkedIn tomou uma iniciatia interna chamada de Inversion, que 
 ### Super Blocks
 ### Multi-Data Center
 
-### Processamento de dados
+### Processamento de dados/ Analytics
 
+Todos os dias, a plataforma do LinkedIn gera uma grande quantidade de dados e esses são armazenados em bancos de dados e sistemas de registro de eventos. Ao longo dos anos, foram desenvolvidas muitas soluções para o consumo de dados dos bancos de dados de origem (Oracle, MySQL, Espresso) como o uso de arquivos incrementais periodicamente ou stream de captura de alterações em dados (Databus).<br/>
+Além disso, rastrear todos os eventos importantes e transmiti-los por meio do pipeline central citado anteriormente (Kafka). Devido a grande quantidade de dados gerados diariamente, foi necessário uma solução que possa escalar com pouco esforço e disponibilizar dados com baixa latência.
+<br/><br/>
+Para isso os dados de analytics eram todos armazenados em um repositório central de dados utilizando do Hadoop HDFS
+
+------ como esse dados era processado
 
 # Referências:
 
