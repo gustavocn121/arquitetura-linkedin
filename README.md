@@ -13,13 +13,13 @@
 
 ## Início do projeto
 ### Monolito
-* Leo
+* Leo: <br/>
   O LinkedIn começou como um único aplicativo monolito chamado "Leo". Ele hospedava web servlets para cada uma das várias páginas, continha a lógica de negócios e se conectava aos diversos bancos de dados do LinkedIn. <br/>
 ![](images/Leo.png)
 
   
-* Member Graph
-* Replica read DBs
+* Member Graph: <br/>
+* Replica read DBs: <br/>
 Com o tempo, o site se popularizou de maneira veloz, com isso a o banco de dados de perfis de usuários começou a ficar sobrecarregado.<br/>
 Inicialmente foi realizado um escalonamento vertical, ou seja foi adicionado novas e mais potentes CPUs e memórias RAM. Essa solução foi efetiva no primeiro momento até que uma solução permanete fosse desenvolvida.<br/>
 A solução desenvolvida foi gerar replicas do banco de dados para apenas leitura. Os bancos utilizados era todos para leitura e escrita o que sobrecarregava os mesmos, e passaram a existir replicas apenas para leitura, aliviando o banco de dados principal uma vez que muitas dessas requisições passaram a ser enviadas diretamente para a replica utilizando de um Load balancer.
