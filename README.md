@@ -74,7 +74,7 @@ Antes:
 ![](images/ingestaoAntes.png)
 Depois:
 ![](images/ingestaoGoblin.png)
------- como esse dados era processado
+
 
 # Referências:
 
