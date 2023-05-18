@@ -34,8 +34,13 @@ Com isso as seguintes estratégias foram adotadas:
   A Service-Oriented Architecture (SOA) é um estilo arquitetural baseado na criação e uso de componentes independentes e interoperáveis chamados serviços para desenvolver um software. Nesse modelo, os componentes interagem entre si para realizar as funcionalidades mais complexas do sistema.<br/> Essa abordagem permite a reutilização de serviços, facilita a integração entre sistemas e promove a modularidade e a escalabilidade. <br/>
   ![](images/SOA.png)
 * Caching: <br/>
+  Buscando escalar ainda mais foram adicionadas novas camadas de caching utilizando das tecnologias memcache e couchbase nos módulos da aplicação além de utilizar da tecnologia voldemort para cachear camadas de dados e precomputar resultados quando possível.<br/>
+  Vale ressaltar que nessa etapa foram adicionadas caches em excesso e futuramente alguns desses foram retirados.
 * Kafka: <br/>
-* Inversion: <br/>
+  Para coletar a grande quantidade de dados foram desenvolvidas diversas pipelines de dados. A fim de contribuir com a escalabilidade de cada uma dessas foi utilizado o Kafka como um centralizador dessas pipelines permitindo o acesso aos dados em near realtime.
+
+## Inversion
+No fim de 2011 o LinkedIn tomou uma iniciatia interna chamada de Inversion, que consistia em pausar o desenvolvimento de novas features e focar na melhoria do sistema, infraestrutura e deploy. A partir do sucesso dessa, os desenvolvedor envolvidos no projeto conseguiram desenvolver as soluções eficientes e escaláveis que são utilizadas atualmente.
 
 
 ## Arquitetura Atual
