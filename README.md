@@ -46,6 +46,15 @@ Com isso as seguintes estratégias foram adotadas:
 ## Inversion
 No fim de 2011 o LinkedIn tomou uma iniciatia interna chamada de Inversion, que consistia em pausar o desenvolvimento de novas features e focar na melhoria do sistema, infraestrutura e deploy. A partir do sucesso dessa, os desenvolvedor envolvidos no projeto conseguiram desenvolver as soluções eficientes e escaláveis que são utilizadas atualmente.
 
+## Espresso
+
+Em um ritmo em que o número de requisições à infraestrutura de armazenamento do Linkedin dobrava a cada ano foi encontrado um problema quanto ao crescimento de custos, latência e capacidade de entrega da plataforma. Isso se dava pois a estrutura atual do backend das features relacionadas a perfil de usuários, composta por um backend que utilizava do memcached como cache de leitura entre a aplicação e o banco de dados se tornava cada vez mais insustentavel devido à problemas de performance e baixa manutenabilidade.
+
+Com isso em 2014 é introduzido o [Espresso](https://engineering.linkedin.com/blog/2023/upscaling-profile-datastore-while-reducing-costs), um banco de dados NoSQL online, distribuido e tolerante a falhas, e com outras caracteristicas relacionadas a latência e escalabilidade foi possível abandonar a solução anterior utilizando memcached. Para isso são necessários roteadores, que agem como um proxy para requisições e adotam um [cache off-heap](https://github.com/snazy/ohc) e nós de armazenamento.
+
+![image](https://github.com/gustavocn121/arquitetura-linkedin/assets/34549814/69bee208-d3fc-4dfe-9dcd-e156a5a177d3)
+
+Eventualmente foi necessário adicionar novamente uma camada de cache ao backend de perfil, e considerando que mais de 99% das requisições recebidas eram de leitura, foi adotada uma estratégia diferente. Dessa vez foi adotado o Couchbase diretamente na camada de armazenamento, assim poupando desenvolvedores de terem que lidar com lógica de cache em suas aplicações.
 
 ## Arquitetura Atual
 
@@ -84,3 +93,4 @@ Depois:
 * Slides da disciplina de Arquitetura de Software
 * https://engineering.linkedin.com/data-ingestion/gobblin-big-data-ease
 * https://engineering.linkedin.com/espresso/introducing-espresso-linkedins-hot-new-distributed-document-store
+* https://engineering.linkedin.com/blog/2023/upscaling-profile-datastore-while-reducing-costs
