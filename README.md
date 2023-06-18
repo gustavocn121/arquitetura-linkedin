@@ -112,10 +112,10 @@ Depois:
 
 O trabalho acima foi desenvolvido como parte da disciplica Arquitetura de Software, lecionada no 5o periodo da graduação em Engenharia de Software pela Pontifícia Universidade Católica de Minas Gerais.
 
-Bernardo Aquino Capello Coelho
-Guilherme Roberto Ferreira Santos
-Gustavo de Castro Nogueira
-Thalles Nascimento Carvalho
+Bernardo Aquino Capello Coelho<br/>
+Guilherme Roberto Ferreira Santos<br/>
+Gustavo de Castro Nogueira<br/>
+Thalles Nascimento Carvalho<br/>
 
 # Referências:
 
