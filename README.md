@@ -9,6 +9,7 @@
 * Implementar uma maneira de gerenciar conexões entre usuários
 * Escalar para milhões de usuários
 * Alta disponibilidade
+* Diminuir quantidade de acessos de leitura e escrita ao banco de dados
 
 # Histórico de mudanças no projeto
 
