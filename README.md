@@ -75,6 +75,28 @@ Para lidar com a replicação dos dados em diversos datacenters foi desenvolvido
 
 A adoção da utilização de múltiplos datacenters também auxiliou a manter a plataforma sempre com alta disponibilidade, aumentando também a tolerância à falhas.
 
+### Deco 
+
+Com a adoção do Rest.li a partir de 2013 e o crescente número de serviços, a experiência para o desenvolvedor no Linkedin se tornava cada vez melhor. Porém para clientes externos o contrário ocorria, pois frequentemente se encontravam em um emaranhado de serviços necessários para cumprir um objetivo.
+
+Com isso é proposto o Deco, uma biblioteca proposta para agir como orquestrador para esses clientes externos, fornecendo um único ponto de contato para requisitar todos os tipos de dados. O Deco utilizava de uma linguagem de buscas própria que não adotava o uso de schemas, o que se mostrou um problema de acordo com a maneira em que a solução foi sendo escalada.
+
+### GraphQL
+
+Com os problemas emergentes com o Deco, foi introduzido o uso do GraphQL.
+
+Apesar de ser uma linguagem de queries open source, a sua implementação na infraestrutura do Linkedin não deixa de ser única. Isso se dá pois a maneira como implementaram o GraphQL adicionou algumas caracteristicas únicas como:
+
+- Interface com o GraphQL individualizada de forma em que cada microserviço possuir a sua própria
+- O sistema de tipos é gerado automaticamente, a partir dos schemas de entidade fornecidos pelos serviços já existentes do Rest.li
+- Apenas queries registradas são permitidas em ambiente de produção
+- Montado utilizando o [graphql-java](https://github.com/graphql-java/graphql-java) como base
+
+![image](https://github.com/gustavocn121/arquitetura-linkedin/assets/34549814/b7919efc-261e-40a1-bd34-1d551c308b31)
+
+Outra diferença de implementações mais comuns é que, no caso do Linkedin, o GraphQL é implementado no mesmo nível do serviço, e não como uma camada a parte, poupando assim recursos de rede. Outro benefício à essa abordagem é a não-centralização dos endpoints GraphQL em um só gateway.
+
+
 ### Processamento de dados/ Analytics
 
 Todos os dias, a plataforma do LinkedIn gera uma grande quantidade de dados e esses são armazenados em bancos de dados e sistemas de registro de eventos. Ao longo dos anos, foram desenvolvidas muitas soluções para o consumo de dados dos bancos de dados de origem (Oracle, MySQL, Espresso) como o uso de arquivos incrementais periodicamente ou stream de captura de alterações em dados (Databus).<br/>
@@ -104,3 +126,4 @@ Thalles Nascimento Carvalho
 * https://engineering.linkedin.com/data-ingestion/gobblin-big-data-ease
 * https://engineering.linkedin.com/espresso/introducing-espresso-linkedins-hot-new-distributed-document-store
 * https://engineering.linkedin.com/blog/2023/upscaling-profile-datastore-while-reducing-costs
+* https://engineering.linkedin.com/blog/2023/how-linkedin-adopted-a-graphql-architecture-for-product-developm
