@@ -54,7 +54,9 @@ Com isso em 2014 é introduzido o [Espresso](https://engineering.linkedin.com/bl
 
 ![image](https://github.com/gustavocn121/arquitetura-linkedin/assets/34549814/69bee208-d3fc-4dfe-9dcd-e156a5a177d3)
 
-Eventualmente foi necessário adicionar novamente uma camada de cache ao backend de perfil, e considerando que mais de 99% das requisições recebidas eram de leitura, foi adotada uma estratégia diferente. Dessa vez foi adotado o Couchbase diretamente na camada de armazenamento, assim poupando desenvolvedores de terem que lidar com lógica de cache em suas aplicações.
+Eventualmente foi necessário adicionar novamente uma camada de cache ao backend de perfil, e considerando que mais de 99% das requisições recebidas eram de leitura, foi adotada uma estratégia diferente. 
+
+Dessa vez foi adotado o Couchbase na camada de armazenamento, assim poupando desenvolvedores de terem que lidar com lógica de cache em suas aplicações. Apesar de atuar na camada de armazenamento, o Couchbase existe de forma separada à fonte de verdade do Espresso, funcionando de forma em que os roteadores tem acesso as réplicas do Couchbase operando entre os roteadores e a fonte de dados.
 
 ## Arquitetura Atual
 
@@ -84,6 +86,14 @@ Antes:
 Depois:
 ![](images/ingestaoGoblin.png)
 
+## Autores
+
+O trabalho acima foi desenvolvido como parte da disciplica Arquitetura de Software, lecionada no 5o periodo da graduação em Engenharia de Software pela Pontifícia Universidade Católica de Minas Gerais.
+
+Bernardo Aquino Capello Coelho
+Guilherme Roberto Ferreira Santos
+Gustavo de Castro Nogueira
+Thalles Nascimento Carvalho
 
 # Referências:
 
